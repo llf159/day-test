@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>人生若只如初见</title> <!-- 你可以随意改标题 -->
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 150px;
+      background-color: #f0f0f0;
+    }
+    #time {
+      font-size: 5em;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="time">载入中...</div>
+
+<script>
+  const start = new Date("2022-10-29T22:00:00"); // 认识的起始时间
+
+  function updateTime() {
+    const now = new Date();
+    const diffMs = now - start;
+
+    const totalMinutes = Math.floor(diffMs / (1000 * 60));
+    const days = Math.floor(totalMinutes / (60 * 24));
+    const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24)
+                    .toString().padStart(2, '0');
+    const minutes = (totalMinutes % 60)
+                    .toString().padStart(2, '0');
+
+    document.getElementById("time").innerText =
+      `${days} : ${hours} : ${minutes}`;
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000); // 每秒更新一次
+</script>
+
+</body>
+</html>
