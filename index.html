@@ -56,8 +56,8 @@
 
     .scene {
       position: relative;
-      width: min(86vw, 760px);
-      padding: 72px 42px;
+      width: min(96vw, 860px);
+      padding: 72px 28px;
       isolation: isolate;
     }
 
@@ -88,11 +88,13 @@
 
     #time {
       margin: 0;
-      font-size: clamp(3.25rem, 11vw, 7rem);
+      font-size: clamp(2rem, 9vw, 6.5rem);
       font-weight: bold;
       line-height: 1;
       letter-spacing: 0;
+      white-space: nowrap;
       color: #7d2e45;
+      font-variant-numeric: tabular-nums;
       text-shadow:
         0 2px 0 rgba(255, 255, 255, 0.72),
         0 18px 42px rgba(126, 45, 68, 0.28);
@@ -100,51 +102,34 @@
 
     .heart {
       position: absolute;
-      width: 18px;
-      height: 18px;
-      transform: rotate(45deg);
-      background: rgba(172, 61, 93, 0.55);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      line-height: 1;
+      color: rgba(172, 61, 93, 0.55);
+      text-shadow: 0 10px 24px rgba(126, 45, 68, 0.18);
       animation: float 8s ease-in-out infinite;
-    }
-
-    .heart::before,
-    .heart::after {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      content: "";
-      border-radius: 50%;
-      background: inherit;
-    }
-
-    .heart::before {
-      left: -9px;
-    }
-
-    .heart::after {
-      top: -9px;
     }
 
     .heart:nth-child(1) {
       top: 12%;
       left: 9%;
-      transform: rotate(45deg) scale(0.75);
+      font-size: 25px;
       animation-delay: -1s;
     }
 
     .heart:nth-child(2) {
       right: 11%;
       bottom: 14%;
-      transform: rotate(45deg) scale(1.05);
-      background: rgba(255, 128, 157, 0.48);
+      font-size: 36px;
+      color: rgba(255, 128, 157, 0.55);
       animation-delay: -4s;
     }
 
     .heart:nth-child(3) {
       right: 17%;
       top: 18%;
-      transform: rotate(45deg) scale(0.55);
-      background: rgba(126, 45, 68, 0.38);
+      font-size: 20px;
+      color: rgba(126, 45, 68, 0.42);
       animation-delay: -6s;
     }
 
@@ -162,7 +147,7 @@
     @media (max-width: 560px) {
       .scene {
         width: calc(100vw - 28px);
-        padding: 58px 20px;
+        padding: 58px 12px;
       }
 
       .scene::before {
@@ -174,9 +159,9 @@
 </head>
 <body>
   <main class="scene">
-    <span class="heart"></span>
-    <span class="heart"></span>
-    <span class="heart"></span>
+    <span class="heart">♥</span>
+    <span class="heart">♥</span>
+    <span class="heart">♥</span>
     <div id="time">载入中...</div>
   </main>
 
